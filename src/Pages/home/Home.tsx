@@ -1,6 +1,8 @@
 import React from 'react';
 import homeLogo from '../../assets/natureza.jpg'
 import './Home.css';
+import ModalPostagem from '../../components/postagens/modalPostagem/ModalPostagem';
+
 
 function Home() {
     return (
@@ -14,6 +16,7 @@ function Home() {
         <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold">Seja bem-vinde!</h2>
         <p className="text-base sm:text-lg md:text-xl">Expresse aqui seus pensamentos e opiniões</p>
         <div className="flex justify-center md:justify-start">
+          <ModalPostagem />
           <button className="rounded bg-white text-blue-800 py-2 px-4 sm:py-2.5 sm:px-6 text-sm sm:text-base hover:bg-gray-200 transition">
             Ver postagens
           </button>
