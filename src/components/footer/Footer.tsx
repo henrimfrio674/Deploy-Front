@@ -1,7 +1,8 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import React, { useContext } from 'react'
+
 import { FacebookLogo, InstagramLogo, LinkedinLogo } from '@phosphor-icons/react'
 import { AuthContext } from '../../contexts/AuthContext'
+import { useContext } from 'react'
 
 function Footer() {
 
@@ -10,7 +11,7 @@ function Footer() {
 
     let footerComponent
 
-    const data = new Date().getFullYear()
+   
 
 
     if (usuario.token !== "") {
