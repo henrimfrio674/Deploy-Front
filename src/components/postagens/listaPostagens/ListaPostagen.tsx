@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useContext, useEffect, useState } from 'react';
 import { Dna } from 'react-loader-spinner';
 import { useNavigate } from 'react-router-dom';
@@ -5,6 +7,7 @@ import { AuthContext } from '../../../contexts/AuthContext';
 import CardPostagem from '../cardPostagens/CardPostagens';
 import { buscar } from '../../../services/Services';
 import Postagem from '../../../models/Postagens';
+import { toastAlerta } from '../../../util/toastAlerta';
 
 
 function ListaPostagens() {
@@ -17,7 +20,7 @@ function ListaPostagens() {
 
   useEffect(() => {
     if (token === '') {
-      alert('Você precisa estar logado');
+      toastAlerta('Você precisa estar logado','info');
       navigate('/');
     }
   }, [token]);
@@ -31,7 +34,7 @@ function ListaPostagens() {
       });
     } catch (error: any) {
       if (error.toString().includes('403')) {
-        alert('O token expirou, favor logar novamente')
+        toastAlerta('O token expirou, favor logar novamente','info')
         handleLogout()
       }
     }

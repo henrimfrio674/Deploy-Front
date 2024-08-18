@@ -1,4 +1,3 @@
-import React from 'react';
 import './App.css';
 
 import Navbar from './components/navbar/Navbar';
@@ -15,6 +14,9 @@ import homeLogo from './assets/natureza.jpg'
 import ListaPostagens from './components/postagens/listaPostagens/ListaPostagen';
 import DeletarPostagem from './components/postagens/deletarPostagem/DeletarPostagem';
 import FormularioPostagem from './components/postagens/formularioPostagem/FormularioPostagem';
+import Perfil from './Pages/perfil/Perfil';
+import { ToastContainer } from 'react-toastify';
+import "react-toastify/dist/ReactToastify.css";
 
 
 function App() {
@@ -22,8 +24,9 @@ function App() {
     <>
     <AuthProvider>
         <BrowserRouter>
-          <Navbar />
+        <ToastContainer />
           <div className='min-h-[80vh] bg-cover bg-center' style={{ backgroundImage: `url(${homeLogo})` }}>
+          <Navbar />
             <Routes>
               <Route path="/" element={<Cadastro />} />
               <Route path="/login" element={<Login />} />
@@ -37,6 +40,7 @@ function App() {
               <Route path="/deletarPostagem/:id" element={<DeletarPostagem />} />
               <Route path="/cadastroPostagem" element={<FormularioPostagem />} />
               <Route path="/editarPostagem/:id" element={<FormularioPostagem />} />
+              <Route path="/perfil" element={<Perfil />} />
             </Routes>
           </div>
           <Footer />

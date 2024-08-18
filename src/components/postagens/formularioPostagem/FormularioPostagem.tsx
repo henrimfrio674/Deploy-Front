@@ -4,6 +4,7 @@ import { AuthContext } from '../../../contexts/AuthContext';
 import Postagem from '../../../models/Postagens';
 import Temas from '../../../models/Temas';
 import { buscar, atualizar, cadastrar } from '../../../services/Services';
+import { toastAlerta } from '../../../util/toastAlerta';
 
 
 
@@ -57,7 +58,7 @@ function FormularioPostagem() {
 
   useEffect(() => {
     if (token === '') {
-      alert('Você precisa estar logado');
+      toastAlerta('Você precisa estar logado','info');
       navigate('/');
     }
   }, [token]);
@@ -103,14 +104,14 @@ function FormularioPostagem() {
             Authorization: token,
           },
         });
-        alert('Postagem atualizada com sucesso');
+        toastAlerta('Postagem atualizada com sucesso','sucesso');
         retornar();
       } catch (error: any) {
         if (error.toString().includes('403')) {
-          alert('O token expirou, favor logar novamente')
+          toastAlerta('O token expirou, favor logar novamente','info')
           handleLogout()
         } else {
-          alert('Erro ao atualizar a Postagem');
+          toastAlerta('Erro ao atualizar a Postagem','erro');
         }
       }
     } else {
@@ -121,14 +122,14 @@ function FormularioPostagem() {
           },
         });
 
-        alert('Postagem cadastrada com sucesso');
+        toastAlerta('Postagem cadastrada com sucesso','sucesso');
         retornar();
       } catch (error: any) {
         if (error.toString().includes('403')) {
-          alert('O token expirou, favor logar novamente')
+          toastAlerta('O token expirou, favor logar novamente','info')
           handleLogout()
         } else {
-          alert('Erro ao cadastrar a Postagem');
+          toastAlerta('Erro ao cadastrar a Postagem','erro');
         }
       }
     }

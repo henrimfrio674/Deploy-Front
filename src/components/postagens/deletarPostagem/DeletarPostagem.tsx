@@ -1,8 +1,11 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useContext, useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import { AuthContext } from '../../../contexts/AuthContext'
 import Postagem from '../../../models/Postagens'
 import { buscar, deletar } from '../../../services/Services'
+import { toastAlerta } from '../../../util/toastAlerta'
 
 
 function DeletarPostagem() {
@@ -24,7 +27,7 @@ function DeletarPostagem() {
       })
     } catch (error: any) {
       if (error.toString().includes('403')) {
-        alert('O token expirou, favor logar novamente')
+        toastAlerta('O token expirou, favor logar novamente','info')
         handleLogout()
       }
     }
@@ -32,7 +35,7 @@ function DeletarPostagem() {
 
   useEffect(() => {
     if (token === '') {
-      alert('Você precisa estar logado')
+      toastAlerta('Você precisa estar logado','info')
       navigate('/login')
     }
   }, [token])
@@ -55,10 +58,10 @@ function DeletarPostagem() {
         }
       })
 
-      alert('Postagem apagada com sucesso')
+      toastAlerta('Postagem apagada com sucesso','sucesso')
 
     } catch (error) {
-      alert('Erro ao apagar a Postagem')
+      toastAlerta('Erro ao apagar a Postagem','error')
     }
 
     retornar()
