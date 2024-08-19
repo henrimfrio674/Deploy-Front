@@ -24,7 +24,7 @@ function App() {
     <AuthProvider>
         <BrowserRouter>
         <ToastContainer />
-          <div className='min-h-[80vh] bg-cover bg-center' style={{ backgroundImage: `url(${homeLogo})` }}>
+          <div className='min-h-[80vh] bg-cover bg-center'>
           <Navbar />
             <Routes>
               <Route path="/" element={<Cadastro />} />
