@@ -19,7 +19,7 @@ function Navbar() {
 
   if(usuario.token !== "") {
     navbarComponent = (
-      <div className="w-full bg-gray-800 text-white flex justify-center py-4 bg-cover bg-center" style={{ backgroundImage: `url(${homeLogo})` }}>
+      <div className="w-full bg-gray-800 text-white flex justify-center py-4 bg-cover bg-center" >
         <div className="container flex flex-col md:flex-row items-center justify-between text-lg px-4">
           {/* Logo/Título */}
           <div className="text-2xl font-bold uppercase mb-2 md:mb-0">
