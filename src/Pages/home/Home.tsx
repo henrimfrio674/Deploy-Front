@@ -1,4 +1,3 @@
-import homeLogo from '../../assets/natureza.jpg'
 import './Home.css';
 import ModalPostagem from '../../components/postagens/modalPostagem/ModalPostagem';
 
