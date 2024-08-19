@@ -20,11 +20,6 @@ function Home() {
           </button>
         </div>
       </div>
-
-      
-      <div className="flex items-center justify-center">
-        <img src={homeLogo} alt="Logo" className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg" />
-      </div>
     </div>
   </div>
 </div>
