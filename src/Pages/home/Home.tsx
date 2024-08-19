@@ -6,7 +6,7 @@ import ModalPostagem from '../../components/postagens/modalPostagem/ModalPostage
 function Home() {
     return (
         <>
-<div className="relative bg-indigo-900 flex justify-center items-center min-h-screen bg-cover bg-center" style={{ backgroundImage: `url(${homeLogo})` }}>
+<div className="relative bg-indigo-900 flex justify-center items-center min-h-screen bg-cover bg-center" >
   <div className="absolute inset-0 bg-black opacity-50"></div> {/* Sobreposição escura */}
   <div className="relative container mx-auto px-4 sm:px-6 lg:px-8 text-white">
     <div className="grid grid-cols-1 md:grid-cols-2 gap-8 py-8">
