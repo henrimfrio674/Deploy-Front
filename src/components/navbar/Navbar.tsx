@@ -1,6 +1,5 @@
 import { Link, useNavigate } from 'react-router-dom'
 import { AuthContext } from '../../contexts/AuthContext'
-import homeLogo from '../../assets/naturezaNav.jpg'
 import { toastAlerta } from '../../util/toastAlerta'
 import { useContext } from 'react'
 
